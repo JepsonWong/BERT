@@ -132,3 +132,9 @@ cal\_performance函数：调用cal\_loss函数计算logloss，计算n\_correct�
 处理一个batch的数据在encoder阶段完成后，decoder阶段运行一次仅仅预测此时刻的翻译结果（如果目标句子最大长度为100，就要运行100次encoder；每次encoder传入当前得到的所有目标词的预测结果和此时的mask，mask的目的是把该预测词之后的词屏蔽掉）。
 
 预测阶段采用**beam search**的方法，同时计算loss也采用了**label smoothing**的方法。
+
+## 参考
+
+[谁能解释下seq2seq中的beam search算法过程?](https://www.zhihu.com/question/54356960)
+
+[深度学习：自然语言生成-集束搜索beam search和随机搜索random search](https://blog.csdn.net/pipisorry/article/details/78404964)
