@@ -1,6 +1,12 @@
 
 ## PyTorch ipython版本（针对自动翻译）
 
+[参考1](http://nlp.seas.harvard.edu/2018/04/03/attention.html#encoder)
+
+[参考2](https://arxiv.org/abs/1706.03762)
+
+[code1](https://github.com/harvardnlp/annotated-transformer)
+
 ### make\_model()函数
 
 参数定义：
@@ -39,7 +45,15 @@ data\_iter：定义数据生成方式；model：定义的模型对象；loss\_co
 
 ## PyTorch版本
 
+[参考1](https://github.com/jadore801120/attention-is-all-you-need-pytorch)
+
 ### 要点
+
+### 一些工具
+
+利用tokenizer.perl进行词例化，作用是将平行预料中的每个词进行词例化。
+
+[Moses创建一个翻译系统的基本过程记录，以后会按照每个过程详细说明，并给出每个步骤的参数说明](https://www.cnblogs.com/hitnoah/p/3942717.html)
 
 ### 一些mask
 
@@ -138,3 +152,23 @@ cal\_performance函数：调用cal\_loss函数计算logloss，计算n\_correct�
 [谁能解释下seq2seq中的beam search算法过程?](https://www.zhihu.com/question/54356960)
 
 [深度学习：自然语言生成-集束搜索beam search和随机搜索random search](https://blog.csdn.net/pipisorry/article/details/78404964)
+
+[GoogLeNet的心路历程（四）里面有label smoothing](https://www.jianshu.com/p/0cc42b8e6d25)
+
+## TensorFlow版本
+
+[参考1](https://github.com/Kyubyong/transformer/blob/master/modules.py)
+
+### 数据准备
+
+prepro.py：构建词表文件
+
+data\_load.py：加载数据。load\_train\_data函数和load\_test\_data函数均调用create\_data函数来构造数据，其中X、Y是转化为词id的数据，Sources、Targets是词和词之间由空格隔开的句子。
+
+get\_batch\_data是构造TensorFlow输入的部分。采用tennorflow数据读取机制，tf.train.shuffle\_batch函数。这样源源不断输入数据，不需要构造placeholder。
+
+### train.py
+
+仅仅Decoder阶段的第一个self\_attention有mask。
+
+感觉mask相比较PyTorch版本有点少。
