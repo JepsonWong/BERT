@@ -172,3 +172,13 @@ get\_batch\_data是构造TensorFlow输入的部分。采用tennorflow数据读�
 仅仅Decoder阶段的第一个self\_attention有mask。
 
 感觉mask相比较PyTorch版本有点少。
+
+## TensorFlow + Keras版本
+
+[参考1](https://github.com/Lsdefine/attention-is-all-you-need-keras)
+
+### 数据准备
+
+Just preproess your source and target sequences as the format in en2de.s2s.txt and pinyin.corpus.examples.txt.
+
+大概是“源语言 + "\t" + 目标语言”格式，其中源语言和目标语言词或字或标点符号之间以空格隔开。
