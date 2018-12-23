@@ -7,6 +7,8 @@
 
 [code1](https://github.com/harvardnlp/annotated-transformer)
 
+介绍Transformer比较好的文章可以参考以下两篇文章：一个是Jay Alammar可视化地介绍Transformer的博客文章The Illustrated Transformer ，非常容易理解整个机制，建议先从这篇看起；然后可以参考哈佛大学NLP研究组写的“The Annotated Transformer.”，代码原理双管齐下，讲得非常清楚。
+
 ### make\_model()函数
 
 参数定义：
