@@ -1,3 +1,8 @@
+# Transformeri: 第一代Transformer
+
+## Moses
+
+[Moses创建一个翻译系统的基本过程记录，以后会按照每个过程详细说明，并给出每个步骤的参数说明](https://www.cnblogs.com/hitnoah/p/3942717.html)
 
 ## PyTorch ipython版本（针对自动翻译）
 
@@ -184,3 +189,34 @@ get\_batch\_data是构造TensorFlow输入的部分。采用tennorflow数据读�
 Just preproess your source and target sequences as the format in en2de.s2s.txt and pinyin.corpus.examples.txt.
 
 大概是“源语言 + "\t" + 目标语言”格式，其中源语言和目标语言词或字或标点符号之间以空格隔开。
+
+# Universal Transformer: 第二代Transformer
+
+[谷歌Transformer模型再进化，图灵完备版已上线](https://www.leiphone.com/news/201808/1nhPCi9jWWNGv6aw.html)
+
+[Universal Transformers详解](https://zhuanlan.zhihu.com/p/44655133)
+
+# Transformer-XL: 第三代Transformer
+
+TRANSFORMER-XL: ATTENTIVE LANGUAGE MODELS BEYOND A FIXED-LENGTH CONTEXT
+
+https://github.com/kimiyoung/transformer-xl
+
+[transformer-xl](https://daiwk.github.io/posts/nlp-transformer-xl.html)
+
+[谷歌开源超强语言模型 Transformer-XL，两大技术解决长文本问题](https://zhuanlan.zhihu.com/p/56027916)
+
+[ICLR 2019 遗珠？加大号变形金刚，Transformer-XL](https://www.leiphone.com/news/201901/rHqmq4BECBamv7Vz.html)
+
+## 模型架构
+
+### 递归机制（recurrence mechanism）
+
+为了解决固定长度上下文的局限性，我们在Transformer架构中引入一种递归机制（recurrence mechanism）。除了实现超长的上下文和解决碎片问题外，这种递归方案的另一个好处是显著加快了评估速度。
+
+### 相对位置编码方案（relative positional encoding scheme）
+
+# Character-Level Language Modeling with Deeper Self-Attention
+
+[基于深度self-attention的字符集语言模型（transformer）论文笔记](https://blog.csdn.net/qq_41664845/article/details/84389286)
+
