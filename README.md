@@ -208,6 +208,8 @@ https://github.com/kimiyoung/transformer-xl
 
 [ICLR 2019 遗珠？加大号变形金刚，Transformer-XL](https://www.leiphone.com/news/201901/rHqmq4BECBamv7Vz.html)
 
+[CMU和谷歌联手放出XL号Transformer！提速1800倍 | 代码+预训练模型+超参数](https://zhuanlan.zhihu.com/p/54909623)
+
 ## 模型架构
 
 ### 递归机制（recurrence mechanism）
@@ -215,6 +217,14 @@ https://github.com/kimiyoung/transformer-xl
 为了解决固定长度上下文的局限性，我们在Transformer架构中引入一种递归机制（recurrence mechanism）。除了实现超长的上下文和解决碎片问题外，这种递归方案的另一个好处是显著加快了评估速度。
 
 ### 相对位置编码方案（relative positional encoding scheme）
+
+在标准的Transformer中，序列顺序的信息，都是由一组位置编码提供，每一个位置都有绝对的位置信息。但将这个逻辑应用到重用机制中时，会导致性能损失。
+
+这个问题的解决思路是，对隐藏状态中的相对位置信息进行编码。从概念上讲，位置编码为模型提供了关于应如何收集信息的时间线索，即应该在哪里介入处理。
+
+以相对的方式定义时间线索，将相同的信息注入每层的注意分数，更加直观，也更通用。
+
+基于这个思路，可以创建一组相对位置编码，使得重用机制变得可行，也不会丢失任何的时间信息。
 
 # Character-Level Language Modeling with Deeper Self-Attention
 
