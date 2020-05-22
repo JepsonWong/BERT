@@ -1,4 +1,9 @@
-# Transformeri: 第一代Transformer
+# Transformer: 第一代Transformer
+
+## 开放性问题
+
+* Transformer结构中最后一层softmax为什么不再使用层次化softmax了呢？
+* 层次softmax为什么用哈夫曼树？
 
 ## Moses
 
@@ -229,4 +234,22 @@ https://github.com/kimiyoung/transformer-xl
 # Character-Level Language Modeling with Deeper Self-Attention
 
 [基于深度self-attention的字符集语言模型（transformer）论文笔记](https://blog.csdn.net/qq_41664845/article/details/84389286)
+
+# 基于Transformer的一些改进
+
+## 限定和指导 Seq2Seq 模型的生成结果
+
+https://www.wxwenku.com/d/107404994
+
+https://www.wxwenku.com/d/107404993
+
+### Learning Efficient Lexically-Constrained Neural Machine Translation with External Memory
+
+Grid Beam Search 和 Dynamic Beam Allocation 和 Cube Pruning (网格束搜索和动态束分配和立体剪枝)
+
+用外部记忆学习高效的词汇约束神经机器翻译: http://blog.sina.com.cn/s/blog_14c4dc9370102zew7.html https://zhuanlan.zhihu.com/p/58325713
+
+### Alignment-Enhanced Transformer for Constraining NMT with Pre-Specified Translations
+
+神经机器翻译中会对翻译预先指定一些词级别限制（比如word alignments限制），不像之前直接使用Transformer里面的source to target的attention，而是**额外增加**了一个source to target的attention来捕捉external supervision signals。
 
